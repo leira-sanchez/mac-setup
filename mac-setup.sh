@@ -40,6 +40,19 @@ brew install n
 echo "${green}Installing NVM...${reset}"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 
+# Config git username and email
+echo "${green}Now we'll setup your name and email for git ${reset}"
+  echo "What's your name?"
+  read USER_NAME
+  git config --global user.name $USER_NAME
+  echo "What's your email?"
+  read EMAIL_ADDRESS
+git config --global user.email $EMAIL_ADDRESS
+
+
+git config --global user.name "Your Name"
+git config --global user.email you@example.com
+
 # Install all useful Apps
 echo "${green}Installing Chrome...${reset}"
 brew cask install google-chrome
@@ -89,7 +102,7 @@ brew cask install kindle
 # Install App Store CLI
 brew install mas
 
-# Install XCode from the App Store
+# Install XCode from the App Store using its identifier
 mas install 497799835
 
 #Done
