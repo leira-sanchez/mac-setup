@@ -53,10 +53,7 @@ git config --global user.email $EMAIL_ADDRESS
 git config --global user.name "Your Name"
 git config --global user.email you@example.com
 
-# Install all useful Apps
-echo "${green}Installing Chrome...${reset}"
-brew cask install google-chrome
-
+# Install VS Code and extensions
 echo "${green}Installing VSCode...${reset}"
 brew cask install visual-studio-code
 
@@ -68,6 +65,11 @@ code --install-extension Gruntfuggly.todo-tree
 code --install-extension eamodio.gitlens
 code --install-extension bierner.markdown-preview-github-styles
 code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension xabikos.javascriptsnippets
+
+# Install all useful Apps
+echo "${green}Installing Chrome...${reset}"
+brew cask install google-chrome
 
 echo "${green}Installing Alfred...${reset}"
 brew cask install alfred
@@ -98,6 +100,9 @@ brew cask install whatsapp
 
 echo "${green}Installing kindle...${reset}"
 brew cask install kindle
+
+echo "${green}Installing clipy...${reset}"
+brew cask install clipy
 
 # Install App Store CLI
 brew install mas
