@@ -101,6 +101,9 @@ brew cask install whatsapp
 echo "${green}Installing kindle...${reset}"
 brew cask install kindle
 
+echo "${green}Installing send-to-kindle...${reset}"
+brew cask install send-to-kindle
+
 echo "${green}Installing clipy...${reset}"
 brew cask install clipy
 
