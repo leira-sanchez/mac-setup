@@ -29,6 +29,11 @@ echo "${green}Installing shell profile...${reset}"
 cat "$SCRIPTDIR/.zshrc" >> "$CFG_FILE"
 perl -pi -e  "s/avit/$THEME/g" ~/.zshrc
 
+# Add custom aliases
+echo "${green}Adding Custom Aliases...${reset}"
+touch ~/.oh-my-zsh/custom/aliases.zsh
+echo -e "alias gac='git add . && git commit -m'\nalias co='checkout'" >> ~/.oh-my-zsh/custom/aliases.zsh
+
 # Install Xcode command line tools
 xcode-select --install
 
