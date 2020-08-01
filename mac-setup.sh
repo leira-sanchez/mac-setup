@@ -54,10 +54,6 @@ echo "${green}Now we'll setup your name and email for git ${reset}"
   read EMAIL_ADDRESS
 git config --global user.email $EMAIL_ADDRESS
 
-
-git config --global user.name "Your Name"
-git config --global user.email you@example.com
-
 # Install VS Code and extensions
 echo "${green}Installing VSCode...${reset}"
 brew cask install visual-studio-code
