@@ -13,10 +13,39 @@ softwareupdate -i -a
 defaults write com.apple.dock autohide -float 1
 defaults write com.apple.dock autohide-time-modifier -float 1;
 
+# Wipe all (default) app icons from the Dock
+# This is only really useful when setting up a new Mac, or if you don’t use
+# the Dock to launch apps
+defaults write com.apple.dock persistent-apps -array
+
+# Show only open applications in the Dock
+defaults write com.apple.dock static-only -bool true
+
+###############################################################################
+# Mail                                                                        #
+###############################################################################
+
+# Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+
+
+###############################################################################
+# Finder Stuff                                                                #
+###############################################################################
+
 # Finder should show all .files
 defaults write com.apple.finder AppleShowAllFiles YES
 
-echo "${green}Setting up project folders...${reset}"
+# Finder should show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Keep folders on top when sorting by name
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+# When performing a search, search the current folder by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+echo "${green}Setting up dev folder...${reset}"
 mkdir -p ~/dev
 
 # Install Brew
@@ -52,7 +81,11 @@ echo "${green}Now we'll setup your name and email for git ${reset}"
   git config --global user.name $USER_NAME
   echo "What's your email?"
   read EMAIL_ADDRESS
-git config --global user.email $EMAIL_ADDRESS
+  git config --global user.email $EMAIL_ADDRESS
+
+###############################################################################
+# VSCode                                                                      #
+###############################################################################
 
 # Install VS Code and extensions
 echo "${green}Installing VSCode...${reset}"
@@ -68,7 +101,9 @@ code --install-extension bierner.markdown-preview-github-styles
 code --install-extension streetsidesoftware.code-spell-checker
 code --install-extension xabikos.javascriptsnippets
 
-# Install all useful Apps
+###############################################################################
+# Apps                                                                        #
+###############################################################################
 echo "${green}Installing Chrome...${reset}"
 brew cask install google-chrome
 
