@@ -1,5 +1,5 @@
 # Script to Setup a New Mac
-SCRIPTDIR="$(dirname "$leira")"
+SCRIPTDIR="$(dirname "$0")"
 THEME="steeef"
 
 red=`tput setaf 1`
@@ -61,7 +61,7 @@ perl -pi -e  "s/avit/$THEME/g" ~/.zshrc
 # Add custom aliases
 echo "${green}Adding Custom Aliases...${reset}"
 touch ~/.oh-my-zsh/custom/aliases.zsh
-echo -e "alias gac='git add . && git commit -m'\nalias co='checkout'" >> ~/.oh-my-zsh/custom/aliases.zsh
+echo -e "alias gac='git add . && git commit -m'\n alias co='checkout'\n alias ys='yarn start'" >> ~/.oh-my-zsh/custom/aliases.zsh
 
 # Install Xcode command line tools
 xcode-select --install
@@ -78,7 +78,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 echo "${green}Now we'll setup your name and email for git ${reset}"
   echo "What's your name?"
   read USER_NAME
-  git config --global user.name $USER_NAME
+  git config --global user.name "$USER_NAME"
   echo "What's your email?"
   read EMAIL_ADDRESS
   git config --global user.email $EMAIL_ADDRESS
@@ -116,9 +116,6 @@ brew cask install appcleaner
 echo "${green}Installing slack...${reset}"
 brew cask install slack
 
-echo "${green}Installing dropbox...${reset}"
-brew cask install dropbox
-
 echo "${green}Installing spotify...${reset}"
 brew cask install spotify
 
@@ -143,11 +140,17 @@ brew cask install send-to-kindle
 echo "${green}Installing clipy...${reset}"
 brew cask install clipy
 
+echo "${green}Installing App Store CLI...${reset}"
 # Install App Store CLI
 brew install mas
 
+echo "${green}Installing Xcode...${reset}"
 # Install XCode from the App Store using its identifier
 mas install 497799835
 
+echo "${green}Installing OneNote...${reset}"
+# Install Microsoft OneNote from the App Store
+ mas install 784801555
+
 #Done
-echo "\n\Done! 🎉 You might need to log out and in for changes to take effect."
+echo "${green}\n\Done! 🎉 You might need to log out and in or even restart for changes to take effect."
