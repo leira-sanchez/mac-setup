@@ -112,6 +112,12 @@ brew install n
 echo "${green}Installing NVM...${reset}"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 
+echo "${green}Installing mysql...${reset}"
+brew install mysql
+
+echo "${green}Installing sequel-pro-nightly...${reset}"
+brew cask install homebrew/cask-versions/sequel-pro-nightly
+
 # Config git username and email
 echo "${green}Now we'll setup your name and email for git ${reset}"
   echo "What's your name?"
@@ -163,8 +169,8 @@ brew cask install postman
 echo "${green}Installing rectangle...${reset}"
 brew cask install rectangle
 
-echo "${green}Installing postico...${reset}"
-brew cask install postico
+# echo "${green}Installing postico...${reset}"
+# brew cask install postico
 
 echo "${green}Installing whatsapp...${reset}"
 brew cask install whatsapp
