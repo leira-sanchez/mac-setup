@@ -8,10 +8,16 @@ reset=`tput sgr0`
 # Check for system update and install 
 softwareupdate -i -a
 
-# MacOS stuff
+###############################################################################
+# General                                                                        #
+###############################################################################
+
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
+###############################################################################
+# Dock                                                                        #
+###############################################################################
 # Auto-hide the dock
 defaults write com.apple.dock autohide -float 1
 defaults write com.apple.dock autohide-time-modifier -float 1;
@@ -170,7 +176,6 @@ echo "${green}Installing clipy...${reset}"
 brew cask install clipy
 
 echo "${green}Installing App Store CLI...${reset}"
-# Install App Store CLI
 brew install mas
 
 echo "${green}Installing Xcode...${reset}"
