@@ -1,5 +1,4 @@
 # Script to Setup a New Mac
-SCRIPTDIR="$(dirname "$0")"
 THEME="steeef"
 
 red=`tput setaf 1`
@@ -8,6 +7,10 @@ reset=`tput sgr0`
 
 # Check for system update and install 
 softwareupdate -i -a
+
+# MacOS stuff
+# Disable the “Are you sure you want to open this application?” dialog
+defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Auto-hide the dock
 defaults write com.apple.dock autohide -float 1
@@ -33,6 +36,9 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 # Finder Stuff                                                                #
 ###############################################################################
 
+# Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
+defaults write com.apple.finder QuitMenuItem -bool true
+
 # Finder should show all .files
 defaults write com.apple.finder AppleShowAllFiles YES
 
@@ -45,8 +51,31 @@ defaults write com.apple.finder _FXSortFoldersFirst -bool true
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
-echo "${green}Setting up dev folder...${reset}"
-mkdir -p ~/dev
+###############################################################################
+# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+###############################################################################
+
+# Trackpad: enable tap to click for this user and for the login screen
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Trackpad: map bottom right corner to right-click
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+# defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+
+# Disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+
+# enable three finger drag on trackpad
+defaults write http://com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -int 1
+defaults write http://com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -int 1
+
+echo "${green}Setting up code folder...${reset}"
+mkdir -p ~/code
 
 # Install Brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -55,7 +84,7 @@ mkdir -p ~/dev
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "${green}Installing shell profile...${reset}"
-cat "$SCRIPTDIR/.zshrc" >> "$CFG_FILE"
+cat "~/.zshrc" >> "$CFG_FILE"
 perl -pi -e  "s/avit/$THEME/g" ~/.zshrc
 
 # Add custom aliases
