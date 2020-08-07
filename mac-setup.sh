@@ -166,6 +166,9 @@ brew cask install spotify
 echo "${green}Installing postman...${reset}"
 brew cask install postman
 
+echo "${green}Installing zoom...${reset}"
+brew cask install zoomus
+
 echo "${green}Installing rectangle...${reset}"
 brew cask install rectangle
 
