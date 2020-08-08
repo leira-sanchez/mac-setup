@@ -150,6 +150,8 @@ code --install-extension eamodio.gitlens
 code --install-extension bierner.markdown-preview-github-styles
 code --install-extension streetsidesoftware.code-spell-checker
 code --install-extension xabikos.javascriptsnippets
+code --install-extension ue.alphabetical-sorter
+code --install-extension jpoissonnier.vscode-styled-components
 
 ###############################################################################
 # Apps                                                                        #
