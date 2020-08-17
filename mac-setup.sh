@@ -1,6 +1,6 @@
 # Script to Setup a New Mac
 # run without downloading: 
-# curl https://raw.githubusercontent.com/leira-sanchez/mac-setup/master/sandbox.sh
+# curl https://raw.githubusercontent.com/leira-sanchez/mac-setup/master/mac-setup.sh | bash
 
 THEME="steeef"
 
