@@ -98,10 +98,6 @@ mkdir -p ~/code
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-echo "${green}Installing shell profile...${reset}"
-cat "~/.zshrc" >> "$CFG_FILE"
-perl -pi -e  "s/avit/$THEME/g" ~/.zshrc
-
 # Add custom aliases
 echo "${green}Adding Custom Aliases...${reset}"
 touch ~/.oh-my-zsh/custom/aliases.zsh
