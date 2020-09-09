@@ -140,7 +140,6 @@ brew cask install visual-studio-code
 echo "${green}Installing VSCode Extensions...${reset}"
 code --install-extension CoenraadS.bracket-pair-colorizer-2
 code --install-extension formulahendry.auto-rename-tag
-code --install-extension wayou.vscode-todo-highlight
 code --install-extension Gruntfuggly.todo-tree
 code --install-extension eamodio.gitlens
 code --install-extension bierner.markdown-preview-github-styles
@@ -191,6 +190,12 @@ brew cask install send-to-kindle
 echo "${green}Installing clipy...${reset}"
 brew cask install clipy
 
+echo "${green}Installing notion...${reset}"
+brew cask install notion
+
+echo "${green}Installing Firefox Developer Edition...${reset}"
+brew cask install firefox-developer-edition
+
 echo "${green}Installing App Store CLI...${reset}"
 brew install mas
 
@@ -198,9 +203,9 @@ echo "${green}Installing Xcode...${reset}"
 # Install XCode from the App Store using its identifier
 mas install 497799835
 
-echo "${green}Installing OneNote...${reset}"
-# Install Microsoft OneNote from the App Store
- mas install 784801555
+# echo "${green}Installing OneNote...${reset}"
+# # Install Microsoft OneNote from the App Store
+#  mas install 784801555
 
 #Done
 echo "${green}\n\Done! 🎉 You might need to log out and in or even restart for changes to take effect."
