@@ -114,11 +114,11 @@ brew install n
 echo "${green}Installing NVM...${reset}"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 
-echo "${green}Installing mysql...${reset}"
-brew install mysql
+# echo "${green}Installing mysql...${reset}"
+# brew install mysql
 
-echo "${green}Installing sequel-pro-nightly...${reset}"
-brew cask install homebrew/cask-versions/sequel-pro-nightly
+# echo "${green}Installing sequel-pro-nightly...${reset}"
+# brew cask install homebrew/cask-versions/sequel-pro-nightly
 
 # Config git username and email
 echo "${green}Now we'll setup your name and email for git ${reset}"
@@ -138,12 +138,12 @@ echo "${green}Installing VSCode...${reset}"
 brew cask install visual-studio-code
 
 echo "${green}Installing VSCode Extensions...${reset}"
-code --install-extension CoenraadS.bracket-pair-colorizer-2
 code --install-extension formulahendry.auto-rename-tag
 code --install-extension Gruntfuggly.todo-tree
 code --install-extension eamodio.gitlens
 code --install-extension bierner.markdown-preview-github-styles
 code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension streetsidesoftware.code-spell-checker-spanish
 code --install-extension xabikos.javascriptsnippets
 code --install-extension ue.alphabetical-sorter
 code --install-extension jpoissonnier.vscode-styled-components
