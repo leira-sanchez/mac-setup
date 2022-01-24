@@ -147,6 +147,9 @@ code --install-extension streetsidesoftware.code-spell-checker-spanish
 code --install-extension xabikos.javascriptsnippets
 code --install-extension ue.alphabetical-sorter
 code --install-extension jpoissonnier.vscode-styled-components
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension esbenp.prettier-vscode
+code --install-extension GitHub.vscode-pull-request-github
 
 ###############################################################################
 # Apps                                                                        #
@@ -157,8 +160,8 @@ brew cask install google-chrome
 echo "${green}Installing Alfred...${reset}"
 brew cask install alfred
 
-echo "${green}Installing appcleaner...${reset}"
-brew cask install appcleaner
+# echo "${green}Installing appcleaner...${reset}"
+# brew cask install appcleaner
 
 echo "${green}Installing slack...${reset}"
 brew cask install slack
@@ -178,14 +181,14 @@ brew cask install rectangle
 # echo "${green}Installing postico...${reset}"
 # brew cask install postico
 
-echo "${green}Installing whatsapp...${reset}"
-brew cask install whatsapp
+# echo "${green}Installing whatsapp...${reset}"
+# brew cask install whatsapp
 
-echo "${green}Installing kindle...${reset}"
-brew cask install kindle
+# echo "${green}Installing kindle...${reset}"
+# brew cask install kindle
 
-echo "${green}Installing send-to-kindle...${reset}"
-brew cask install send-to-kindle
+# echo "${green}Installing send-to-kindle...${reset}"
+# brew cask install send-to-kindle
 
 echo "${green}Installing clipy...${reset}"
 brew cask install clipy
