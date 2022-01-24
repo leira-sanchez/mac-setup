@@ -177,7 +177,7 @@ echo "${green}Installing postman...${reset}"
 brew install --cask postman
 
 echo "${green}Installing zoom...${reset}"
-brew install --cask zoomus
+brew install zoom
 
 echo "${green}Installing rectangle...${reset}"
 brew install --cask rectangle
