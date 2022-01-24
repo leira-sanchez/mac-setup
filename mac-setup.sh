@@ -107,27 +107,31 @@ echo -e "alias gac='git add . && git commit -m'\n alias co='checkout'\n alias ys
 xcode-select --install
 
 # Node + NPM + Yarn
-brew install npm
 brew install yarn
-brew install n
+
+echo "installing node (via n-install)"
+curl -L https://git.io/n-install | bash
+
+echo "node --version: $(node --version)"
+echo "npm --version: $(npm --version)"
 
 echo "${green}Installing NVM...${reset}"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+brew install nvm
 
 # echo "${green}Installing mysql...${reset}"
-# brew install mysql
+# brew install --cask mysql
 
 # echo "${green}Installing sequel-pro-nightly...${reset}"
-# brew cask install homebrew/cask-versions/sequel-pro-nightly
+# brew install --cask homebrew/cask-versions/sequel-pro-nightly
 
 # Config git username and email
 echo "${green}Now we'll setup your name and email for git ${reset}"
-  echo "What's your name?"
-  read USER_NAME
-  git config --global user.name "$USER_NAME"
-  echo "What's your email?"
-  read EMAIL_ADDRESS
-  git config --global user.email $EMAIL_ADDRESS
+echo "What's your name?"
+read USER_NAME
+git config --global user.name "$USER_NAME"
+echo "What's your email?"
+read EMAIL_ADDRESS
+git config --global user.email $EMAIL_ADDRESS
 
 ###############################################################################
 # VSCode                                                                      #
@@ -135,7 +139,7 @@ echo "${green}Now we'll setup your name and email for git ${reset}"
 
 # Install VS Code and extensions
 echo "${green}Installing VSCode...${reset}"
-brew cask install visual-studio-code
+brew install --cask visual-studio-code
 
 echo "${green}Installing VSCode Extensions...${reset}"
 code --install-extension formulahendry.auto-rename-tag
@@ -155,49 +159,49 @@ code --install-extension GitHub.vscode-pull-request-github
 # Apps                                                                        #
 ###############################################################################
 echo "${green}Installing Chrome...${reset}"
-brew cask install google-chrome
+brew install --cask google-chrome
 
 echo "${green}Installing Alfred...${reset}"
-brew cask install alfred
+brew install --cask alfred
 
 # echo "${green}Installing appcleaner...${reset}"
-# brew cask install appcleaner
+# brew install --cask appcleaner
 
 echo "${green}Installing slack...${reset}"
-brew cask install slack
+brew install --cask slack
 
 echo "${green}Installing spotify...${reset}"
-brew cask install spotify
+brew install --cask spotify
 
 echo "${green}Installing postman...${reset}"
-brew cask install postman
+brew install --cask postman
 
 echo "${green}Installing zoom...${reset}"
-brew cask install zoomus
+brew install --cask zoomus
 
 echo "${green}Installing rectangle...${reset}"
-brew cask install rectangle
+brew install --cask rectangle
 
 # echo "${green}Installing postico...${reset}"
-# brew cask install postico
+# brew install --cask postico
 
 # echo "${green}Installing whatsapp...${reset}"
-# brew cask install whatsapp
+# brew install --cask whatsapp
 
 # echo "${green}Installing kindle...${reset}"
-# brew cask install kindle
+# brew install --cask kindle
 
 # echo "${green}Installing send-to-kindle...${reset}"
-# brew cask install send-to-kindle
+# brew install --cask send-to-kindle
 
 echo "${green}Installing clipy...${reset}"
-brew cask install clipy
+brew install --cask clipy
 
 echo "${green}Installing notion...${reset}"
-brew cask install notion
+brew install --cask notion
 
 echo "${green}Installing Firefox Developer Edition...${reset}"
-brew cask install firefox-developer-edition
+brew install --cask firefox-developer-edition
 
 echo "${green}Installing MeetingBar...${reset}"
 brew install --cask meetingbar
@@ -210,6 +214,9 @@ brew install --cask coscreen
 
 echo "${green}Installing Loom...${reset}"
 brew install --cask loom
+
+echo "${green}Installing Loom...${reset}"
+brew install --cask docker
 
 echo "${green}Installing Gifski...${reset}"
 brew install gifski
