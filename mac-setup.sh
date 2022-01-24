@@ -199,16 +199,27 @@ brew cask install notion
 echo "${green}Installing Firefox Developer Edition...${reset}"
 brew cask install firefox-developer-edition
 
+echo "${green}Installing MeetingBar...${reset}"
+brew install --cask meetingbar
+
+echo "${green}Installing Tuple...${reset}"
+brew install --cask tuple
+
+echo "${green}Installing CoScreen...${reset}"
+brew install --cask coscreen
+
+echo "${green}Installing Loom...${reset}"
+brew install --cask loom
+
+echo "${green}Installing Gifski...${reset}"
+brew install gifski
+
 echo "${green}Installing App Store CLI...${reset}"
 brew install mas
 
 echo "${green}Installing Xcode...${reset}"
 # Install XCode from the App Store using its identifier
 mas install 497799835
-
-# echo "${green}Installing OneNote...${reset}"
-# # Install Microsoft OneNote from the App Store
-#  mas install 784801555
 
 #Done
 echo "${green}\n\Done! 🎉 You might need to log out and in or even restart for changes to take effect."
